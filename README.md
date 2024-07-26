@@ -2,7 +2,7 @@
 
 ## Business Overview
 
-**Nightmare Kitchen** is a fictitious restaurant known for its hilarious and absurd service issues. 😂 The restaurant is infamous for its untrained chefs 👩‍🍳, overpriced and average food 💸, high delivery fees 🚚, consistently late deliveries ⏰, and rude staff 😡. Our goal is to improve the business by developing a fully-functional web application 💻 that addresses these issues and transforms the customer experience. 🌟
+**Nightmare Kitchen** is a hilarious restaurant known for its untrained chefs 👩‍🍳, overpriced and average food 💸, high delivery fees 🚚, consistently late deliveries ⏰, and rude staff 😡. The restaurant has lost millions 💰 and all its customers 😢. Zahiir and Mochee have stepped in to save the restaurant from doom 🦸‍♂️🦸‍♂️, working to revive and promote its image. Our goal is to improve the business by developing a fully-functional web application 💻 that addresses these issues and transforms the customer experience. 🌟
 
 ## Project Scope
 
@@ -37,4 +37,4 @@ Students are expected to integrate different concepts from class into a real or 
 
 Each team member will be responsible for specific parts of the project, divided into front end and back end tasks, ensuring equal contribution and individual accountability. 🤝
 
-By creating this web application, we aim to turn **Nightmare Kitchen** into a humorous yet improved dining experience 😂🍽️, addressing its quirky challenges and ensuring customer satisfaction. 😃👍
+By creating this web application, Zahiir and Mochee aim to turn **Nightmare Kitchen** into a humorous yet improved dining experience 😂🍽️, addressing its quirky challenges and ensuring customer satisfaction 😃👍, reviving the restaurant's lost glory and promoting its image to attract customers back. 🏆✨
