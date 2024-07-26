@@ -1,27 +1,40 @@
-Welcome to **StreamPlay+** 🎮🍿, the ultimate platform that seamlessly blends the worlds of gaming and movies! Our service offers:
+# Project: Nightmare Kitchen
 
-- **User Accounts** 👤: Personalize your experience with individual accounts.
-- **Subscription Plans** 💳: Choose a plan that suits your needs and enjoy unlimited access.
-- **Streaming Capability** 📺: Stream your favorite games and movies in high quality.
-- **Content Browsing** 🔍: Easily find what you’re looking for with advanced filter options.
-- **User Reviews and Ratings** ⭐: Share your thoughts and read others’ experiences.
-- **Recommendations** 🎯: Get personalized suggestions based on your preferences.
-- **Offline Downloads** ⬇️: Download games and movies to enjoy offline anytime, anywhere.
+## Business Overview
 
-Join us at StreamPlay+ and dive into a world of endless entertainment! 🌟📽️🎮
+**Nightmare Kitchen** is a fictitious restaurant known for its hilarious and absurd service issues. The restaurant is infamous for its untrained chefs, overpriced and average food, high delivery fees, consistently late deliveries, and rude staff. Our goal is to improve the business by developing a fully-functional web application that addresses these issues and transforms the customer experience.
 
-### Tech Stack 🛠️
-- **Frontend**: HTML, CSS, Bootstrap, JavaScript, jQuery
-- **Backend**: PHP, Apache
-- **Database**: MySQL
+## Project Scope
 
-### Clone the Repository 📂
-```bash
-git clone https://github.com/Peerbux-Muhammud-Zahiir/StreamPlayPlus.git
-```
+Students are expected to integrate different concepts from class into a real or fictitious project. The project will consist of the creation of a fully-functional web application to improve **Nightmare Kitchen**. 
 
-### Contributors 👥
-- **Zahiir Peerbux** (GitHub:[Zahiir Peerbux](https://github.com/Peerbux-Muhammud-Zahiir)) 🌟
-- **Mochee Roy** (GitHub: [Mochee Roy](https://github.com/Rushika-Mocheeroy)) 🚀
+### Timeline
 
-We hope you enjoy using StreamPlay+ as much as we enjoyed creating it! If you have any questions or feedback, feel free to reach out. Happy streaming! 🎉
+- **Week 1-3:** Finalize project scope, gather requirements, create UML/ERD diagrams and flowcharts.
+- **Week 4-6:** Develop the front end using HTML, CSS, JavaScript, and Bootstrap.
+- **Week 7-9:** Develop the back end using PHP, Laravel, and MySQL, ensuring integration with the front end.
+- **Week 10-12:** Implement web services, JSON handling, and jQuery for dynamic content.
+- **Week 13-14:** Testing, debugging, and final adjustments.
+- **Week 15:** Final presentation and submission, including individual contributions.
+
+## Functional Requirements
+
+1. **Customer Feedback System:** Allow customers to rate and review their dining experience, providing insights into the restaurant’s performance.
+2. **Order Tracking:** Implement a real-time order tracking system to reduce delivery delays and keep customers informed.
+3. **Staff Training Module:** Develop a training module for staff to improve service quality and reduce rudeness.
+4. **Menu Management:** An interactive menu that highlights popular dishes, daily specials, and customer reviews.
+5. **Promotions and Discounts:** Implement a system for promotional offers to make the pricing more attractive.
+6. **Modularized Code:** Ensure that the codebase is modular, with clear naming conventions and good programming practices.
+
+## Technologies and Techniques
+
+- **Front End:** HTML, CSS, JavaScript, Bootstrap for responsive design.
+- **Back End:** PHP, Laravel, MySQL for database management.
+- **Web Services:** JSON, RESTful APIs for data exchange.
+- **Additional Tools:** jQuery for dynamic content, ERD/UML diagrams for system modeling, Git for version control.
+
+## Individual Contributions
+
+Each team member will be responsible for specific parts of the project, divided into front end and back end tasks, ensuring equal contribution and individual accountability.
+
+By creating this web application, we aim to turn **Nightmare Kitchen** into a humorous yet improved dining experience, addressing its quirky challenges and ensuring customer satisfaction.
