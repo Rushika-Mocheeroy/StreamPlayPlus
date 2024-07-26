@@ -1,130 +1,165 @@
 ### Entities and Attributes
 
-1. **User**
-   - `UserID` (Primary Key)
-   - `Username`
+1. **Customer**
+   - `CustomerID` (Primary Key)
+   - `Name`
    - `Email`
-   - `Password`
-   - `SubscriptionID` (Foreign Key)
-   - `Preferences`
+   - `PhoneNumber`
+   - `Address`
    - `JoinDate`
 
-2. **SubscriptionPlan**
-   - `SubscriptionID` (Primary Key)
-   - `PlanName`
-   - `Price`
-   - `Duration` (e.g., monthly, yearly)
+2. **Chef**
+   - `ChefID` (Primary Key)
+   - `Name`
+   - `Specialty`
+   - `ExperienceYears`
+   - `Certification` (e.g., Culinary School)
 
-3. **Content**
-   - `ContentID` (Primary Key)
-   - `Title`
-   - `Type` (e.g., Game, Movie)
-   - `Genre`
-   - `ReleaseDate`
+3. **Inventory**
+   - `InventoryID` (Primary Key)
+   - `ItemName`
+   - `Quantity`
+   - `UnitPrice`
+   - `LastRestocked`
+
+4. **Dish**
+   - `DishID` (Primary Key)
+   - `Name`
+   - `Type` (e.g., Appetizer, Main Course, Dessert)
+   - `Genre` (e.g., Cuisine type)
+   - `Price`
    - `Rating`
 
-4. **Review**
+5. **Review**
    - `ReviewID` (Primary Key)
-   - `UserID` (Foreign Key)
-   - `ContentID` (Foreign Key)
+   - `CustomerID` (Foreign Key)
+   - `DishID` (Foreign Key)
    - `Rating` (e.g., 1-5 stars)
    - `Comment`
    - `ReviewDate`
 
-5. **Recommendation**
+6. **Recommendation**
    - `RecommendationID` (Primary Key)
-   - `UserID` (Foreign Key)
-   - `ContentID` (Foreign Key)
+   - `CustomerID` (Foreign Key)
+   - `DishID` (Foreign Key)
    - `RecommendationDate`
 
-6. **Download**
-   - `DownloadID` (Primary Key)
-   - `UserID` (Foreign Key)
-   - `ContentID` (Foreign Key)
-   - `DownloadDate`
+7. **Order**
+   - `OrderID` (Primary Key)
+   - `CustomerID` (Foreign Key)
+   - `DishID` (Foreign Key)
+   - `OrderDate`
+   - `Status` (e.g., Pending, Delivered, Cancelled)
+   - `DeliveryFee`
+
+8. **ChefAssignment**
+   - `AssignmentID` (Primary Key)
+   - `ChefID` (Foreign Key)
+   - `DishID` (Foreign Key)
+   - `AssignmentDate`
 
 ### Relationships
 
-1. **User - SubscriptionPlan**: 
+1. **Customer - Review**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `SubscriptionPlan` can have many `Users`, but a `User` can only have one `SubscriptionPlan`.
+   - **Cardinality**: One `Customer` can write many `Reviews`, but a `Review` is written by one `Customer`.
 
-2. **User - Review**:
+2. **Dish - Review**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `User` can write many `Reviews`, but a `Review` can only be written by one `User`.
+   - **Cardinality**: One `Dish` can have many `Reviews`, but a `Review` is for one `Dish`.
 
-3. **Content - Review**:
+3. **Customer - Recommendation**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `Content` can have many `Reviews`, but a `Review` is for one `Content`.
+   - **Cardinality**: One `Customer` can have many `Recommendations`, but a `Recommendation` is for one `Customer`.
 
-4. **User - Recommendation**:
+4. **Dish - Recommendation**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `User` can have many `Recommendations`, but a `Recommendation` is for one `User`.
+   - **Cardinality**: One `Dish` can be recommended many times, but a `Recommendation` is for one `Dish`.
 
-5. **Content - Recommendation**:
+5. **Customer - Order**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `Content` can be recommended many times, but a `Recommendation` is for one `Content`.
+   - **Cardinality**: One `Customer` can place many `Orders`, but an `Order` is placed by one `Customer`.
 
-6. **User - Download**:
+6. **Dish - Order**:
    - **Type**: One-to-Many
-   - **Cardinality**: One `User` can have many `Downloads`, but a `Download` is for one `User`.
+   - **Cardinality**: One `Dish` can be included in many `Orders`, but an `Order` is for one `Dish`.
 
-7. **Content - Download**:
-   - **Type**: One-to-Many
-   - **Cardinality**: One `Content` can be downloaded many times, but a `Download` is for one `Content`.
+7. **Dish - Inventory**:
+   - **Type**: Many-to-Many
+   - **Cardinality**: Many `Dishes` use many `Inventory` items, managed through a join table `DishInventory`.
+
+8. **Chef - Dish**:
+   - **Type**: Many-to-Many
+   - **Cardinality**: Many `Chefs` can prepare many `Dishes`, managed through `ChefAssignment`.
 
 ### ERD Diagram Summary
 
-1. **User**
-   - `UserID` (PK)
-   - `Username`
+1. **Customer**
+   - `CustomerID` (PK)
+   - `Name`
    - `Email`
-   - `Password`
-   - `SubscriptionID` (FK)
-   - `Preferences`
+   - `PhoneNumber`
+   - `Address`
    - `JoinDate`
 
-2. **SubscriptionPlan**
-   - `SubscriptionID` (PK)
-   - `PlanName`
-   - `Price`
-   - `Duration`
+2. **Chef**
+   - `ChefID` (PK)
+   - `Name`
+   - `Specialty`
+   - `ExperienceYears`
+   - `Certification`
 
-3. **Content**
-   - `ContentID` (PK)
-   - `Title`
+3. **Inventory**
+   - `InventoryID` (PK)
+   - `ItemName`
+   - `Quantity`
+   - `UnitPrice`
+   - `LastRestocked`
+
+4. **Dish**
+   - `DishID` (PK)
+   - `Name`
    - `Type`
    - `Genre`
-   - `ReleaseDate`
+   - `Price`
    - `Rating`
 
-4. **Review**
+5. **Review**
    - `ReviewID` (PK)
-   - `UserID` (FK)
-   - `ContentID` (FK)
+   - `CustomerID` (FK)
+   - `DishID` (FK)
    - `Rating`
    - `Comment`
    - `ReviewDate`
 
-5. **Recommendation**
+6. **Recommendation**
    - `RecommendationID` (PK)
-   - `UserID` (FK)
-   - `ContentID` (FK)
+   - `CustomerID` (FK)
+   - `DishID` (FK)
    - `RecommendationDate`
 
-6. **Download**
-   - `DownloadID` (PK)
-   - `UserID` (FK)
-   - `ContentID` (FK)
-   - `DownloadDate`
+7. **Order**
+   - `OrderID` (PK)
+   - `CustomerID` (FK)
+   - `DishID` (FK)
+   - `OrderDate`
+   - `Status`
+   - `DeliveryFee`
+
+8. **ChefAssignment**
+   - `AssignmentID` (PK)
+   - `ChefID` (FK)
+   - `DishID` (FK)
+   - `AssignmentDate`
 
 ### Relationships
-1. **User - SubscriptionPlan**: One `SubscriptionPlan` to Many `Users`
-2. **User - Review**: One `User` to Many `Reviews`
-3. **Content - Review**: One `Content` to Many `Reviews`
-4. **User - Recommendation**: One `User` to Many `Recommendations`
-5. **Content - Recommendation**: One `Content` to Many `Recommendations`
-6. **User - Download**: One `User` to Many `Downloads`
-7. **Content - Download**: One `Content` to Many `Downloads`
+1. **Customer - Review**: One `Customer` to Many `Reviews`
+2. **Dish - Review**: One `Dish` to Many `Reviews`
+3. **Customer - Recommendation**: One `Customer` to Many `Recommendations`
+4. **Dish - Recommendation**: One `Dish` to Many `Recommendations`
+5. **Customer - Order**: One `Customer` to Many `Orders`
+6. **Dish - Order**: One `Dish` to Many `Orders`
+7. **Dish - Inventory**: Many `Dishes` to Many `Inventory` items
+8. **Chef - Dish**: Many `Chefs` to Many `Dishes`
 
-This setup ensures a comprehensive and scalable database structure for StreamPlay+, allowing efficient management of user data, content, reviews, recommendations, and downloads.
+This updated setup incorporates **Customer**, **Chef**, and **Inventory** to cover all aspects of the restaurant's operations and management.
